@@ -105,3 +105,9 @@ body {
   transform: rotate(0deg) scale(0);
   transition: all 0.5s ease;
 }
+
+.feedback__hint {
+  color: #fefcfb;
+  font-size: 2rem;
+  text-align: center;
+}
