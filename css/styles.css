@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #121212;
+}
+
+.header {
+  width: 25rem;
+  padding: 0.1rem;
+  border-radius: 1rem;
+  background: linear-gradient(
+    45deg,
+    rgb(153, 51, 255) 0%,
+    rgb(255, 102, 102) 100%
+  );
+}
+
+.header__input-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.7rem 1.3rem;
+  border-radius: 1rem;
+  background-color: #121212;
+}
+
+.header__input {
+  flex: 1;
+  font-size: 1.5rem;
+  color: #fefcfb;
+  background: transparent;
+}
+
+.header__input::placeholder {
+  color: #fefcfb;
+}
+
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+  background: linear-gradient(
+    45deg,
+    rgb(153, 51, 255) 0%,
+    rgb(255, 102, 102) 100%
+  );
+}
+
+.header__btn-icon {
+  font-size: 1.5rem;
+  color: #fefcfb;
+}
