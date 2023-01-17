@@ -86,3 +86,22 @@ body {
   z-index: 2;
   cursor: pointer;
 }
+
+.first-gif {
+  max-width: 250px;
+  max-height: 210px;
+  display: block;
+}
+
+.video,
+.full-area {
+  grid-area: 1/1;
+}
+
+.video {
+  max-width: 250px;
+  max-height: 210px;
+  box-shadow: 0 0 40px 0px rgba(12, 12, 12, 0.1);
+  transform: rotate(0deg) scale(0);
+  transition: all 0.5s ease;
+}
