@@ -1,6 +1,7 @@
 const API_KEY = "IuSylkr4O49mCDh0RFRv1cbvjql5PxNi";
 const searchInput = document.querySelector(".header__input");
 const searchBtn = document.querySelector(".header__btn");
+const clearBtn = document.querySelector(".clear__btn");
 const gifsContainer = document.querySelector(".gifs__container");
 const hint = document.querySelector(".feedback__hint");
 
@@ -85,11 +86,35 @@ document.addEventListener("keyup", (ev) => {
 
   if (searchTerm.length > 2) {
     hint.classList.add("show-hint");
+    hint.innerHTML = `Hit enter or click on <i class="fa-solid fa-magnifying-glass header__btn-img"></i> to search ${searchTerm}`;
   } else {
     hint.classList.remove("show-hint");
   }
 
   if (ev.key === "Enter" && searchTerm.length > 2) {
     searchGiphy(searchTerm);
+  }
+});
+
+const clearSearch = () => {
+  document.body.classList.remove("has-results");
+
+  gifsContainer.innerHTML = `<video
+  class="first-gif full-area"
+  src="https://media2.giphy.com/media/CzbiCJTYOzHTW/giphy.mp4?cid=bcfe5c67gjsb1lq61zjthpej774r5mmme4xchaieuswseiyd&rid=giphy.mp4&ct=g"
+  autoplay="true"
+  loop="true"
+  class="video"
+  muted="muted"
+></video>`;
+  searchInput.value = "";
+  hint.innerText = "";
+  searchInput.focus();
+};
+
+clearBtn.addEventListener("click", clearSearch);
+document.addEventListener("keyup", (ev) => {
+  if (ev.key === "Escape") {
+    clearSearch();
   }
 });
