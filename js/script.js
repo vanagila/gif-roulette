@@ -8,6 +8,18 @@ const randomGif = (arr) => {
   return arr[random];
 };
 
+const createVideo = (src) => {
+  const video = document.createElement("video");
+
+  video.src = src;
+  video.autoplay = true;
+  video.muted = "muted";
+  video.loop = true;
+  video.className = "video";
+
+  return video;
+};
+
 const searchGiphy = (searchTerm) => {
   fetch(
     `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`
@@ -18,6 +30,7 @@ const searchGiphy = (searchTerm) => {
     .then((json) => {
       const gif = randomGif(json.data);
       const src = gif.images.original.mp4;
+      const video = createVideo(src);
     })
     .catch((err) => {
       console.log(err);
