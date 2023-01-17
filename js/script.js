@@ -1,6 +1,7 @@
 const API_KEY = "IuSylkr4O49mCDh0RFRv1cbvjql5PxNi";
 const searchInput = document.querySelector(".header__input");
 const searchBtn = document.querySelector(".header__btn");
+const gifsContainer = document.querySelector(".gifs__container");
 
 const randomGif = (arr) => {
   const random = Math.floor(Math.random() * arr.length);
@@ -31,6 +32,8 @@ const searchGiphy = (searchTerm) => {
       const gif = randomGif(json.data);
       const src = gif.images.original.mp4;
       const video = createVideo(src);
+
+      gifsContainer.append(video);
     })
     .catch((err) => {
       console.log(err);
