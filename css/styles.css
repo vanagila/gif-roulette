@@ -19,6 +19,11 @@ body {
   background-color: #121212;
 }
 
+.grid {
+  display: grid;
+  place-items: center;
+}
+
 .header {
   width: 25rem;
   padding: 0.1rem;
@@ -66,4 +71,18 @@ body {
 .header__btn-icon {
   font-size: 1.5rem;
   color: #fefcfb;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fefcfb;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.clear__btn {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
