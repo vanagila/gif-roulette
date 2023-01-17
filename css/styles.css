@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #121212;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  width: 25rem;
+  padding: 0.1rem;
+  border-radius: 1rem;
+  background: linear-gradient(
+    45deg,
+    rgb(153, 51, 255) 0%,
+    rgb(255, 102, 102) 100%
+  );
+}
+
+.header__input-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.7rem 1.3rem;
+  border-radius: 1rem;
+  background-color: #121212;
+}
+
+.header__input {
+  flex: 1;
+  font-size: 1.5rem;
+  color: #fefcfb;
+  background: transparent;
+}
+
+.header__input::placeholder {
+  color: #fefcfb;
+}
+
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+  background: linear-gradient(
+    45deg,
+    rgb(153, 51, 255) 0%,
+    rgb(255, 102, 102) 100%
+  );
+}
+
+.header__btn-icon {
+  font-size: 1.5rem;
+  color: #fefcfb;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fefcfb;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.clear__btn {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.first-gif {
+  max-width: 250px;
+  max-height: 210px;
+  display: block;
+}
+
+.has-results .first-gif {
+  display: none;
+}
+
+.video,
+.full-area {
+  grid-area: 1/1;
+}
+
+.video {
+  max-width: 250px;
+  max-height: 210px;
+  box-shadow: 0 0 40px 0px rgba(12, 12, 12, 0.1);
+  transform: rotate(0deg) scale(0);
+  transition: all 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.visible:nth-of-type(2n) {
+  transform: scale(1) rotate(0deg);
+}
+
+.visible:nth-of-type(3n) {
+  transform: scale(1) rotate(-5deg);
+}
+
+.visible:nth-of-type(4n) {
+  transform: scale(1) rotate(7deg);
+}
+
+.feedback__hint {
+  color: #fefcfb;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.clear__btn,
+.feedback__spinner,
+.feedback__hint {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.show-hint,
+.loading .feedback__spinner,
+.has-results .clear__btn {
+  opacity: 1;
+}
+
+.loading .show-hint,
+.has-results .title {
+  opacity: 0;
+}
+
+@media (min-width: 600px) {
+  * {
+    font-size: 15px;
+  }
+}
